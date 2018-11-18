@@ -46,7 +46,7 @@ class CentralCorridor(Scene):
         """))
         action = input("> ")
 
-        if action == "shoot" or "1":
+        if action == "shoot" or action == "1":
             print(dedent("""
                 Quick on the draw you yank out your blaster and fire
                 it at the Gothon. His clown costume is flowing and
@@ -59,7 +59,7 @@ class CentralCorridor(Scene):
                 """))
             return 'death'
 
-        elif action == "dodge!" or "2":
+        elif action == "dodge!" or action == "2":
             print(dedent("""
                 Like a world class boxer you dodge, weave, slip and
                 slide right as the Gothon's blaster cranks a laser
@@ -70,7 +70,7 @@ class CentralCorridor(Scene):
                 """))
             return 'death'
 
-        elif action == "tell a joke" or "3":
+        elif action == "tell a joke" or action == "3":
 
             print(dedent("""
                 Lucky for you they made you learn Gothon insults in
@@ -107,9 +107,10 @@ class LaserWeaponArmory(Scene):
         guess = input("[keypad]> ")
         guesses = 0
 
-        while guess != code and guesses < 10:
+        while guess != code and guesses < 9:
             print("BZZZZEDDD!")
             guesses += 1
+            print(guesses)
             guess = input("[keypad]> ")
 
         if guess == code:
